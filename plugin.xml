@@ -45,7 +45,7 @@
 
         <config-file target="AndroidManifest.xml" parent="application">
             <meta-data android:name="igaworks_app_key" android:value="@string/igaworks_app_key"/>
-            <meta-data android:name="igaworks_hash_key" android:value="@string/igaworks_hash_key"/>
+            <meta-data android:name="igaworks_hash_key" android:value="@string/igaworks_app_hash"/>
     			<receiver android:name="com.igaworks.IgawReceiver" android:exported="true">
         		<intent-filter>
             	<action android:name="com.android.vending.INSTALL_REFERRER"/>
@@ -86,8 +86,9 @@
         <config-file target="*-Info.plist" parent="ADBRIX_APP_HASH">
             <string>$IOS_APP_HASH</string>
         </config-file>
-	<framework src="IgaworksCore" type="podspec" />
-	<framework src="AdBrix" type="podspec" />
+	<framework src="AdSupport.framework" />	
+	<framework src="IgaworksCore" type="podspec" spec="2.4.7" />
+	<framework src="AdBrix" type="podspec" spec="2.2.8" />
         <source-file src="src/ios/AdbrixPlugin.swift" />
         <source-file src="src/ios/AdbrixPlugin.h" />
         <source-file src="src/ios/AdbrixPlugin-Bridging-Header.h" />

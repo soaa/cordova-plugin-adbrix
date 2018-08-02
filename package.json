@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-adbrix",
+  "version": "0.0.1",
+  "description": "Cordova Adbrix Plugin",
+  "cordova": {
+    "id": "cordova-plugin-adbrix",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soaa/cordova-plugin-adbrix"
+  },
+  "keywords": [
+    "cordova",
+    "adbrix",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Sanghyeon Kim",
+  "license": "Apache-2.0"
+}
