@@ -24,10 +24,13 @@
     
     @objc(firstTimeExperience:) func firstTimeExperience(command: CDVInvokedUrlCommand) {
         if let options = command.arguments.first as? Dictionary<String, String> {
-            let activity = options["activity"]
-            let param = options["param"]
-            
-            AdBrix.firstTimeExperience(activity, param: param)
+            if let activity = options["activity"] {
+                if let param = options["param"] {
+                    AdBrix.firstTimeExperience(activity, param: param)
+                } else {
+                    AdBrix.firstTimeExperience(activity)
+                }
+            }
         }
         
         self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_OK), callbackId: command.callbackId)
@@ -35,10 +38,13 @@
     
     @objc(retention:) func retention(command: CDVInvokedUrlCommand) {
         if let options = command.arguments.first as? Dictionary<String, String> {
-            let activity = options["activity"]
-            let param = options["param"]
-            
-            AdBrix.retention(activity, param: param)
+            if let activity = options["activity"] {
+                if let param = options["param"] {
+                    AdBrix.retention(activity, param: param)
+                } else {
+                    AdBrix.retention(activity)
+                }
+            }
         }
         
         self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_OK), callbackId: command.callbackId)
@@ -98,4 +104,3 @@ extension AppDelegate {
         self.adbrixSwizzledApplication_options(application, open: url, options: options)
     }
 }
-
